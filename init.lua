@@ -25,7 +25,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "everforest",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -195,6 +195,8 @@ local config = {
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+      ["<leader>bf"] = { function() require("telescope.builtin").buffers() end, desc = "Search buffers" },
+      ["<leader>gH"] = { function() require("telescope.builtin").git_bcommits() end, desc = "Git History" },
       ["<leader>bc"] = {
         "<cmd>BufferLinePickClose<cr>",
         desc = "Pick to close",
@@ -221,6 +223,8 @@ local config = {
     init = {
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
+
+      ["sainnhe/everforest"] = { },
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
